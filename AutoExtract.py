@@ -3,7 +3,7 @@
 __version__ = "1.1.0"
 
 # =============================================================================
-# 多语言支持 (I18N)
+# 多语言支持 (I18N)(目前以支持简体中文、繁体中文、英文和日文)
 # =============================================================================
 import os
 import sys
@@ -192,7 +192,7 @@ def get_executable_path() -> str:
 def add_to_context_menu(i18n: I18N) -> None:
     """将程序添加到右键菜单（仅 Windows）"""
     if platform.system() != "Windows" or winreg is None:
-        print(i18n._('not_windows'))
+        logger.error(i18n._('not_windows'))
         sys.exit(1)
 
     exe_path = get_executable_path()
@@ -217,16 +217,16 @@ def add_to_context_menu(i18n: I18N) -> None:
         winreg.SetValue(cmd2, "", winreg.REG_SZ, f'cmd /c "cd /d \"%V\" && \"{exe_path}\" -y"')
         winreg.CloseKey(cmd2)
 
-        print(i18n._('context_menu_added', path=exe_path))
+        logger.info(i18n._('context_menu_added', path=exe_path))
         sys.exit(0)
     except OSError as e:
-        print(i18n._('context_menu_add_failed', error=str(e)), file=sys.stderr)
+        logger.error(i18n._('context_menu_add_failed', error=str(e)))
         sys.exit(1)
 
 def remove_from_context_menu(i18n: I18N) -> None:
     """从右键菜单中移除程序入口（仅 Windows）"""
     if platform.system() != "Windows" or winreg is None:
-        print(i18n._('not_windows'))
+        logger.error(i18n._('not_windows'))
         sys.exit(1)
 
     try:
@@ -235,10 +235,10 @@ def remove_from_context_menu(i18n: I18N) -> None:
         winreg.DeleteKey(winreg.HKEY_CLASSES_ROOT, f"Directory\\shell\\{CONTEXT_MENU_KEY}")
         winreg.DeleteKey(winreg.HKEY_CLASSES_ROOT, f"Directory\\Background\\shell\\{CONTEXT_MENU_KEY}\\command")
         winreg.DeleteKey(winreg.HKEY_CLASSES_ROOT, f"Directory\\Background\\shell\\{CONTEXT_MENU_KEY}")
-        print(i18n._('context_menu_removed'))
+        logger.info(i18n._('context_menu_removed'))
         sys.exit(0)
     except OSError as e:
-        print(i18n._('context_menu_remove_failed', error=str(e)), file=sys.stderr)
+        logger.error(i18n._('context_menu_remove_failed', error=str(e)))
         sys.exit(1)
 
 # =============================================================================
@@ -568,10 +568,10 @@ def generate_default_delete_list_file(i18n: I18N) -> None:
     try:
         with open(filename, 'w', encoding='utf-8') as f:
             f.write(default_content)
-        print(i18n._('generate_success', filename=filename))
-        print(i18n._('generate_tip'))
+        logger.info(i18n._('generate_success', filename=filename))
+        logger.info(i18n._('generate_tip'))
     except Exception as e:
-        print(i18n._('generate_fail', filename=filename, error=str(e)), file=sys.stderr)
+        logger.error(i18n._('generate_fail', filename=filename, error=str(e)))
         sys.exit(1)
     sys.exit(0)
 
@@ -605,29 +605,30 @@ def should_delete_target_files(config: Config, i18n: I18N) -> bool:
     """询问用户是否删除目标文件"""
     
     if not FILE_NAME_SET:
-        print(i18n._('no_target_files'))
+        logger.info(i18n._('no_target_files')+'\n')
         return False
     
     if config.auto_no:
         return False
     
-    print("\n" + i18n._('delete_target_intro'))
+    print(i18n._('delete_target_intro'))
     for filename in sorted(FILE_NAME_SET):
         print(f" - {filename}")
 
     if config.auto_yes or config.delete_target_files:
         return True
-    
-    return input(i18n._('prompt_delete_files')).lower() == 'y'
+    return input("\n"+i18n._('prompt_delete_files')+"\n").lower() == 'y'
 
 def should_delete_empty_folders(config: Config, i18n: I18N) -> bool:
     """询问用户是否删除空文件夹"""
     if config.auto_yes or config.delete_empty_folders:
         print("\n" + i18n._('delete_empty_dirs_intro'))
         return True
+    
     if config.auto_no:
         return False
-    return input(i18n._('prompt_delete_dirs')).lower() == 'y'
+    
+    return input(i18n._('prompt_delete_dirs')+"\n").lower() == 'y'
 
 def run_main_loop(i18n: I18N, config: Config) -> None:
     """主处理循环"""
@@ -651,11 +652,13 @@ def run_main_loop(i18n: I18N, config: Config) -> None:
                 unzip(i18n, config)
             time.sleep(1)
     except KeyboardInterrupt:
-        logger.info(i18n._('interrupted'))
+        logger.info(i18n._('interrupted')+'\n')
     finally:
         logger.info(i18n._('main_loop_done'))
         if not FAILED_ARCHIVES:
-            logger.info(i18n._('processing_done'))
+            logger.info(i18n._('processing_done')+'\n')
+        else:
+            print()
 
 def print_cikezzz_colored():
     """打印彩色 CikeZZZ Logo"""
@@ -710,7 +713,7 @@ def main() -> None:
     print_detection_failure_report(i18n)
     print_failure_report(i18n)
     
-    logger.info(i18n._('all_done'))
+    logger.info(i18n._('all_done')+'\n')
 
     if not any([
         config.auto_yes, config.auto_no,
@@ -718,7 +721,6 @@ def main() -> None:
         config.delete_list, config.delete_list_file,
         config.generate_delete_list_file,
     ]):
-        input(i18n._('press_enter_exit'))
-
+        input(i18n._('press_enter_exit')+"\n")
 if __name__ == "__main__":
     main()
