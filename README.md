@@ -140,10 +140,12 @@ nuitka --standalone --onefile ^
 ---
 ## 💬 作者说
 
-> 欢迎提出各种问题!
+> 欢迎提出各种问题!  
 > Questions? Suggestions?  
-> 一起进步！
-> Let’s learn and improve together!
+> 一起进步！  
+> Let’s learn and improve together!  
+> 程序运行时有彩蛋！😆  
+> There are Easter eggs when the program is running! 😆
 
 ## 📜 许可证 / License
 
