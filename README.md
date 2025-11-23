@@ -1,4 +1,4 @@
-# CikeZZZ AutoExtract
+# AutoExtract
 
 一款由 Nuitka 打包的全独立智能解压与清理工具 —— 无需 Python，开箱即用。
 
@@ -126,7 +126,7 @@ nuitka --standalone --onefile ^
 
 ---
 
-# CikeZZZ AutoExtract
+# AutoExtract
 
 A fully standalone intelligent archive extractor compiled with Nuitka — no Python required.
 
