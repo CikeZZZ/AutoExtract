@@ -1,0 +1,31 @@
+==================================================
+Third-Party Software Notice
+==================================================
+
+This distribution includes the following third-party software:
+
+1. 7-Zip
+   - Website: https://www.7-zip.org/
+   - License: GNU LGPLv2.1+ and unRAR license
+   - License Text:
+        7-Zip is free software. You can use it on any computer,
+        including in a commercial environment, without registration.
+
+        However, the unRAR license restricts use of the RAR
+        decompression code (see https://www.7-zip.org/license.txt).
+
+   - Included as: 7z.exe, 7z.dll
+
+==================================================
+第三方软件声明
+==================================================
+
+本发布包包含以下第三方软件：
+
+1. 7-Zip
+   - 官网：https://www.7-zip.org/
+   - 许可证：GNU LGPLv2.1+ 与 unRAR 许可证
+   - 许可证说明：
+        7-Zip 是免费软件，可在任何计算机上使用（包括商业环境），无需注册。
+        但 unRAR 许可证对 RAR 解压功能的使用有所限制（详见官网许可证）。
+   - 包含文件：7z.exe, 7z.dll
