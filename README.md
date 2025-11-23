@@ -126,14 +126,6 @@ nuitka --standalone --onefile ^
 
 ---
 
-# English Version README
-
-## Project Introduction
-
-**CikeZZZ AutoExtract** is a **fully standalone, no-install, dependency-free** intelligent extraction tool, compiled with **Nuitka**. It requires **no Python runtime**—just run the executable. Bundled with 7-Zip and all dependencies, it automatically detects unknown files’ true archive types (e.g., `.zip`, `.7z`, `.rar`), securely extracts them in batch, and intelligently cleans up junk files. Features include multi-part archive support, zip bomb protection, disk space validation, Windows context menu integration, and a 4-language UI (Simplified Chinese, Traditional Chinese, English, Japanese). Designed for users who demand **security, efficiency, and zero setup**.
-
----
-
 # CikeZZZ AutoExtract
 
 A fully standalone intelligent archive extractor compiled with Nuitka — no Python required.
