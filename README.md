@@ -22,10 +22,10 @@
 ## 🚀 快速开始 / Quick Start
 
 ### Windows
-1. 下载 `AutoExtract.exe`
-   Download 'AutoExtract.exe'
-2. 将 AutoExtract.exe 放入目标文件夹，双击运行；或将其所在目录添加到系统环境变量后，在任意位置通过命令行调用。你也可以在目标文件夹中按住 Shift + 右键，选择 “在此处打开终端”（或“在此处打开 PowerShell”），然后执行命令：  
-   Place AutoExtract.exe in your target folder and double-click to run it;alternatively, add its directory to your system’s PATH and run it from any location via the command line.You can also hold Shift + right-click inside the target folder, select “Open terminal here” (or “Open PowerShell here”), and run the command:
+1. 下载 `AutoExtract.exe`  
+   Download `AutoExtract.exe`
+2. 将 `AutoExtract.exe` 放入目标文件夹，双击运行；或将其所在目录添加到系统环境变量后，在任意位置通过命令行调用。你也可以在目标文件夹中按住 Shift + 右键，选择 “在此处打开终端”（或“在此处打开 PowerShell”），然后执行命令：  
+   Place `AutoExtract.exe` in your target folder and double-click to run it;alternatively, add its directory to your system’s PATH and run it from any location via the command line.You can also hold Shift + right-click inside the target folder, select “Open terminal here” (or “Open PowerShell here”), and run the command:
 
 ```cmd
 :: 自动解压当前目录所有压缩包（无需确认）
