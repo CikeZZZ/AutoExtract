@@ -10,7 +10,7 @@
 | 中文 | English |
 |------|--------|
 | ✅ **真正独立可执行**：单文件 `.exe`| ✅ **Truly standalone**: Single `.exe` |
-| 📦 **内置 7-Zip**：自动使用同目录 `7z.exe` 或系统 7z | 📦 **Bundled 7-Zip**: Uses `7z.exe` in the same directory or system 7z |
+| 📦 **内置 7-Zip**：内置 `7z.exe`和 `7z.dll` | 📦 **Bundled 7-Zip**: Built-in '7z.exe' and '7z.dll' |
 | 🔍 **智能格式识别**：自动将无扩展名或错误扩展名的文件重命名为正确压缩格式（如 `.zip`, `.7z`, `.rar`） | 🔍 **Smart format detection**: Fixes missing/wrong extensions (e.g., `.zip`, `.7z`, `.rar`) |
 | 🛡️ **多重安全保障**：<br>• 防压缩炸弹（Zip Bomb）<br>• 默认最大解压体积 50 GB<br>• 默认最大文件数 10,000<br>• 解压前检查磁盘剩余空间 | 🛡️ **Multi-layer safety**:<br>• Anti zip bomb<br>• Max unpacked size: 50 GB (default)<br>• Max file count: 10,000 (default)<br>• Disk space validation before extraction |
 | 🖱️ **集成右键菜单**（Windows）：支持文件夹和桌面背景右键，一键解压整个目录 | 🖱️ **Context menu integration** (Windows): Right-click on folders or desktop background to extract entire directories |
