@@ -5,7 +5,7 @@
 
 ---
 # 介绍 / Introduction
-> 
+> AutoExtract 是一款由 Nuitka 打包的全独立、免安装、免依赖的智能解压工具。它无需 Python 环境，开箱即用，内置 7-Zip 引擎与 filetype 依赖，能自动识别未知文件的真实压缩格式（如 .zip、.7z、.rar），安全批量解压，并智能清理垃圾文件。支持分卷压缩包、防压缩炸弹、磁盘空间检查、Windows 右键菜单集成，以及简体中文、繁体中文、英文、日文四语界面。专为追求安全、高效、零配置的用户设计。  
 > AutoExtract is a fully independent, no-installation required, no-dependency-based intelligent decompression tool packaged by Nuitka. It does not require a Python environment, is ready to use out of the box, and comes with the 7-Zip engine and filetype dependencies. It can automatically identify the true compression format of unknown files (such as .zip, .7z, .rar), safely batch decompress, and intelligently clean up junk files. It supports multi-volume compressed packages, anti-compression bombs, disk space check, Windows right-click menu integration, and four language interfaces - Simplified Chinese, Traditional Chinese, English, and Japanese. It is specially designed for users who seek security, efficiency, and zero configuration.
 ---
 
